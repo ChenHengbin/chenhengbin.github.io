@@ -1,4 +1,4 @@
-function b(){
+﻿function b(){
 	h = $(window).height();
 	t = $(document).scrollTop();
 	if(t > h){
