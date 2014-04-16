@@ -48,15 +48,6 @@
 </nav><!--end of navbar-->
 
 
-<script type="text/javascript">
-  var constant = new Constant();
-  function getBookMarkData(){
-    $.getJSON(constant.bookMarkUrl,function(data){
-       var array = data.CDN;
-       console.log(array[0].url);
-    });
-  }
-</script>
 <script src="http://libs.baidu.com/lesscss/1.3.0/less.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
