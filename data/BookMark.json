@@ -1,0 +1,4 @@
+{
+	"CDN":[{"description":"Bootstrap CDN","url":"http://open.bootcss.com/"},
+	       {"description":"百度 CDN","url":"http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs"}]
+}
