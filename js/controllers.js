@@ -1,7 +1,7 @@
 function BmarkCntl($scope){
-	$scope.bookMarks = null;
+	$scope.bookMarks = getBookMarks();
 
-	$scope.getBookMarks = function(){
+	function getBookMarks(){
 		$.getJSON(swModule.constant.BOOK_MARK_URL,function(data){
 		    $scope.bookMarks = data;
 		    $("#BookMark").show();

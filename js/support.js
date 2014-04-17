@@ -8,5 +8,4 @@ function NavBar(){
 	this.bmark.onclick = function(){
 		document.getElementById("bMarkBtn").click();
 	}
-	
 }
