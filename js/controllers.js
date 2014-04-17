@@ -1,9 +1,9 @@
-function BmarkCntl($scope){
+function BmarkCntl($scope,$http){
 	$scope.bookMarks = null;
 
-	function getBookMarks(){
-		$.getJSON(swModule.constant.BOOK_MARK_URL,function(data){
-		    $scope.bookMarks = data;
+
+        $http.get(swModule.constant.BOOK_MARK_URL).success(function(data, status, headers, config) {
+			$scope.bookMarks = data;
 		});
-	}
+
 }
