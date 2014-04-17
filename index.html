@@ -38,8 +38,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active" id="dream"><a href="#">梦想</a></li>
-        <li><a href="#" id="sche">日程</a></li>
-        <li ng-controller="BmarkCntl"><a id="bmark" ng-click="getBookMarks()">书签</a></li>
+        <li><a id="sche">日程</a></li>
+        <li><a id="bmark">书签</a></li>
        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- container -->
@@ -72,7 +72,7 @@
 <script type="text/javascript">
 	var swModule = angular.module('sw',[]);
 	swModule.constant = new Constant();           //全局常量
-	//swModule.navBar = new NavBar();               //导航栏对象
+	swModule.navBar = new NavBar();               //导航栏对象
 	swModule.controller('BmarkCntl',BmarkCntl);   //书签的控制器
 </script>
 
