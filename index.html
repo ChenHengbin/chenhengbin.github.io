@@ -61,8 +61,6 @@
 	</div>
 </div>
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
 <script src="http://libs.baidu.com/lesscss/1.3.0/less.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
@@ -74,6 +72,7 @@
 	swModule.constant = new Constant();           //全局常量
 	swModule.navBar = new NavBar();               //导航栏对象
 	swModule.controller('BmarkCntl',BmarkCntl);   //书签的控制器
+	swModule.navBar.bmark.click();
 </script>
 
 </body>
