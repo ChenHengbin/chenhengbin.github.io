@@ -1,4 +1,4 @@
-<html>
+<html ng-app='sw'>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -11,13 +11,15 @@
 		*{
 			font-family: "Microsoft yahei";
 		}
+		body{
+			color:white;
+			background: none repeat scroll 0% 0% #333;
+		}
 		.navbar-inverse{
 			border-radius: 0px;
-      border-bottom:1px solid #464647;
-		}
-    body{
-      background: none repeat scroll 0% 0% #333;
-    }
+      		border-bottom:1px solid #464647;
+    	}
+
 	</style>
 </head>
 <body>
@@ -37,19 +39,44 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">主页</a></li>
-        <li><a href="#">Javascript</a></li>
-        <li><a href="#">HTML5</a></li>
-        <li><a href="#">CSS3</a></li>
+        <li><a href="#">梦想</a></li>
+        <li><a href="#">日程</a></li>
         <li><a href="#" onclick="getBookMarkData();">书签</a></li>
        </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- container -->
 </nav><!--end of navbar-->
 
+<br/>
+<br/>
+<br/>
+
+<div class="container"  ng-controller="BmarkCntl">
+<ul class="list-group">
+  <li class="list-group-item list-group-item-info">Cras justo odio</li>
+  <li class="list-group-item list-group-item-info">Dapibus ac facilisis in</li>
+  <li class="list-group-item list-group-item-info">Morbi leo risus</li>
+  <li class="list-group-item list-group-item-info">Porta ac consectetur ac</li>
+  <li class="list-group-item list-group-item-info">Vestibulum at eros</li>
+</ul>
+MyName:<input type="text" ng-model="bookMark" placeholder="world">
+<hr>
+Hello {{bookMark}}!
+</div>
+
+
+
+
 <script src="http://libs.baidu.com/lesscss/1.3.0/less.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="http://www.simplewish.cn/js/support.js" charset="utf-8"></script>
+<script src="js/support.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+<script type="text/javascript">
+	var swModule = angular.module('sw',[]);
+	swModule.controller('BmarkCntl',function($scope){
+		$scope.bookMark = "哈哈";
+	});
+</script>
 </body>
 </html>	

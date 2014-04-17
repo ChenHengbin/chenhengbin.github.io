@@ -7,7 +7,9 @@ var constant = new Constant();
 
 function getBookMarkData(){
 	$.getJSON(constant.bookMarkUrl,function(data){
-	   var array = data.CDN;
-	   console.log(array[0].url);
+	    var array = data.CDN;
+	    console.log(array[0].url);	   
+	    if (data) {return data;}
+	    return null;
 	});
 }
