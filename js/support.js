@@ -11,3 +11,13 @@ function NavBar(){
 		document.getElementById("bMarkBtn").click();
 	}
 }
+
+window.onload = function(){
+	if(document.documentElement.scrollHeight<document.documentElement.clientHeiht){
+		var bodyTag =  document.getElemenstByTagName("body")[0];
+		bodyTag.style.height = document.documentElement.clientWidth/screen.width*screen.height+"px";
+	}
+	setTimeout(function(){
+		window.scrollTo(0,1);
+	},0);
+}
