@@ -5,13 +5,17 @@ function BmarkCntl($scope,$http){
 }
 
 function DreamContl($scope,$http){
-	$http.get(swModule.constant.DREAM_URL).success(function(data, status, headers, config) {
-		$scope.dreams = data;
-	});
+	$scope.getDreamList = function(){
+		$http.get(swModule.constant.DREAM_URL).success(function(data, status, headers, config) {
+			$scope.dreams = data;
+		});	
+	}
 }
 
 function ScheContl($scope,$http){
-	$http.get(swModule.constant.SCHE_URL).success(function(data, status, headers, config) {
-		$scope.sches = data;
-	});	
+	$scope.getScheList = function(){
+		$http.get(swModule.constant.SCHE_URL).success(function(data, status, headers, config) {
+			$scope.sches = data;
+		});		
+	}
 }
