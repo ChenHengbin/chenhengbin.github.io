@@ -28,9 +28,9 @@ function NavBar(){
  		var ul = document.querySelector(".navbar-nav");
  		var childList = ul.childNodes;
  		for (var i = childList.length - 1; i >= 0; i--) {
- 			childList[i].classList.remove("active");
+ 			childList[i].className="";
  		};
- 		document.getElementById(id).classList.add("active");
+ 		document.getElementById(id).className="active";
  	}
 }
 
