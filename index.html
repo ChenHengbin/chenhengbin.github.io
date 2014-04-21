@@ -25,6 +25,9 @@
     		-webkit-transition:display ease 1s;
     		transition:display ease 1s;
     	}
+    	.panel-info{
+    		margin: 10px;
+    	}
     	.panel-body{
     		color:blue;
     	}
@@ -86,7 +89,7 @@
 <div class="container content"  ng-controller="ScheContl" id="sche-content">
 	<button ng-click="getScheList()" hidden id="getScheBtn"></button>
 	<div class="row">
-	 	<div class="panel panel-info col-md-6 col-sm-4" ng-repeat="sche in sches">
+	 	<div class="panel panel-info col-md-4 col-sm-6" ng-repeat="sche in sches">
 			<div class="panel-heading"><h3>{{sche.title}}</h3></div>
 			<div class="panel-body"><p>{{sche.time}}</p><p>{{sche.location}}</p></div>
 	 	</div>
