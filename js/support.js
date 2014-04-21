@@ -34,12 +34,10 @@ function NavBar(){
  		document.getElementById(id).className="active";
  		var contents = document.getElementsByClassName("content");
  		for (var i = contents.length - 1; i >= 0; i--) {
- 			contents[i].style.opacity = 0;
- 			contents[i].style.filter = "alpha(opacity=0)";
+ 			contents[i].style.display = "none";
  		};
- 		document.getElementById(id+"-content").style.opacity = 1;
+ 		document.getElementById(id+"-content").display = "";
  	}
-
  }
 
 /*手机端页面加载的时候全屏*/
