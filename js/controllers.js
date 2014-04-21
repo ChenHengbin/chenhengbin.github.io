@@ -12,6 +12,6 @@ function DreamContl($scope,$http){
 
 function ScheContl($scope,$http){
 	$http.get(swModule.constant.SCHE_URL).success(function(data, status, headers, config) {
-		$scope.dreams = data;
+		$scope.sches = data;
 	});	
 }

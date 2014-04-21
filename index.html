@@ -56,7 +56,31 @@
 		<h3>{{cate.category}}</h3>
 		<ul class="list-group">
 		   <li class="list-group-item list-group-item-info" ng-repeat="item in cate.list">
-		  	    <a href="{{item.url}}">{{item.desc}}</a>
+		  	    <a href="{{item.url}}" target="_blank">{{item.desc}}</a>
+		   </li>
+		</ul>
+	</div>
+</div>
+
+<div class="container"  ng-controller="DreamContl" id="Dream">
+	<div ng-repeat="dream in dreams">
+		<h3>{{dream.target}}</h3>
+		<ul class="list-group">
+		   <li class="list-group-item list-group-item-info" ng-repeat="item in dream.list">
+		  	    {{item.time}}<br>
+		  	    {{item.content}}
+		   </li>
+		</ul>
+	</div>
+</div>
+
+<div class="container"  ng-controller="ScheContl" id="Sche">
+	<div>
+		<ul class="list-group">
+		   <li class="list-group-item list-group-item-info" ng-repeat="sche in sches">
+		  	    <h1>{{sche.title}}</h1>
+		  	    <p>{{sche.time}}</p>
+		  	    <p>{{sche.location}}</p>
 		   </li>
 		</ul>
 	</div>
@@ -72,7 +96,9 @@
 	var swModule = angular.module('sw',[]);
 	swModule.constant = new Constant();           //全局常量
 	swModule.navBar = new NavBar();               //导航栏对象
-	swModule.controller('BmarkCntl',BmarkCntl);   //书签的控制器
+	swModule.controller('BmarkCntl',BmarkCntl)
+			.controller('DreamContl',DreamContl)
+			.controller('ScheContl',ScheContl);   //书签的控制器
 </script>
 
 </body>
