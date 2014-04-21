@@ -25,7 +25,6 @@ window.onload = function(){
 
 	document.onclick = function(event){
 		var toggleBtn = document.getElementById("toggleBtn");
-		console.log("test");
 		if(document.body.clientWidth<768){   //toggerBtn在768以下才会显示
 			if(document.getElementById("bs-example-navbar-collapse-1").classList.contains("in")){  //导航栏处于下拉状态
 				var eve = window.event || event ; 
