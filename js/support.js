@@ -1,16 +1,4 @@
-﻿/*判断是否为手持设备*/
-function IsPC() 
-{ 
-   var userAgentInfo = navigator.userAgent; 
-   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"); 
-   var flag = true; 
-   for (var v = 0; v < Agents.length; v++) { 
-       if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; } 
-   } 
-   return flag; 
-} 
-
-window.onload = function(){  
+﻿window.onload = function(){  
 	if(document.documentElement.scrollHeight<document.documentElement.clientHeiht){
 		var bodyTag =  document.getElemenstByTagName("body")[0];
 		bodyTag.style.height = document.documentElement.clientWidth/screen.width*screen.height+"px";
