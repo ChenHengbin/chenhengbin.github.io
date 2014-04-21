@@ -1,7 +1,9 @@
 function BmarkCntl($scope,$http){
-    $http.get(swModule.constant.BOOK_MARK_URL).success(function(data, status, headers, config) {
+	$.scope.getBmarkList = function(){
+		$http.get(swModule.constant.BOOK_MARK_URL).success(function(data, status, headers, config) {
 		$scope.bookMarks = data;
-	});
+		});	
+	}
 }
 
 function DreamContl($scope,$http){

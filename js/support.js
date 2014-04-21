@@ -10,7 +10,7 @@ function NavBar(){
 	this.dream = document.getElementById("dream");
 	this.sche = document.getElementById("sche");
 	this.bmark.onclick = function(){
-		
+		document.getElementById("getBmarkBtn").click();
 	}
 
 	this.dream.onclick = function(){
@@ -18,12 +18,8 @@ function NavBar(){
 	}
 
 	this.sche.onclick = function(){
- 	
-	}
-
-	function showTab(tabId,contentId){
-		document.getElementById("toggleBtn").click();
-	}
+		document.getElementById("getScheBtn").click();
+ 	}
 }
 
 /*手机端页面加载的时候全屏*/
