@@ -99,15 +99,13 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/support.js"></script>
-<script src="js/NavBar.js"></script>
 <script type="text/javascript">
 	var swModule = angular.module('sw',[]);
-	swModule.constant = new Constant();           //全局常量
-	swModule.navBar = new NavBar();               //导航栏对象
 	swModule.controller('BmarkCntl',BmarkCntl)
 			.controller('DreamContl',DreamContl)
-			.controller('ScheContl',ScheContl);   //书签的控制器
+			.controller('ScheContl',ScheContl);   
 </script>
-
+<script src="js/Constant.js"></script>
+<script src="js/NavBar.js"></script>
 </body>
 </html>	

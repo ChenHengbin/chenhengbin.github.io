@@ -1,4 +1,5 @@
-function NavBar(){
+//导航栏对象
+swModule.navBar = (function NavBar(){
 	this.bmark = document.getElementById("bmark");
 	this.dream = document.getElementById("dream");
 	this.sche = document.getElementById("sche");
@@ -31,4 +32,5 @@ function NavBar(){
  		};
  		document.getElementById(id+"-content").style.display = "";
  	}
- }
+ 	return this;
+ })();

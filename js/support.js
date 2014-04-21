@@ -1,11 +1,4 @@
-﻿function Constant(){
-	this.SERVER_URL = "http://www.simplewish.cn/";
-	this.BOOK_MARK_URL = this.SERVER_URL+"data/BookMark.json";
-	this.DREAM_URL = this.SERVER_URL+"data/Dream.json";
-	this.SCHE_URL = this.SERVER_URL+"data/Schedule.json";
-}
-
-/*判断是否为手持设备*/
+﻿/*判断是否为手持设备*/
 function IsPC() 
 { 
    var userAgentInfo = navigator.userAgent; 
@@ -32,12 +25,13 @@ window.onload = function(){
 
 	document.onclick = function(event){
 		var toggleBtn = document.getElementById("toggleBtn");
+		console.log("test");
 		if(document.body.clientWidth<768){   //toggerBtn在768以下才会显示
 			if(document.getElementById("bs-example-navbar-collapse-1").classList.contains("in")){  //导航栏处于下拉状态
 				var eve = window.event || event ; 
-					var ele = eve['srcElement']||eve['target'];	
-					if(ele.id!='toggleBtn'){
-						toggleBtn.click();
+				var ele = eve['srcElement']||eve['target'];	
+				if(ele.id!='toggleBtn'){
+					toggleBtn.click();
 				}	
 			}
 		}

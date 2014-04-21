@@ -1,3 +1,4 @@
+//控制器
 function BmarkCntl($scope,$http){
 	$scope.getBmarkList = function(){
 		$http.get(swModule.constant.BOOK_MARK_URL).success(function(data, status, headers, config) {
