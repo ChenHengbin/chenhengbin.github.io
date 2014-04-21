@@ -40,13 +40,36 @@ function NavBar(){
  	}
  }
 
-/*手机端页面加载的时候全屏*/
+/*判断是否为手持设备*/
+function IsPC() 
+{ 
+   var userAgentInfo = navigator.userAgent; 
+   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"); 
+   var flag = true; 
+   for (var v = 0; v < Agents.length; v++) { 
+       if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; } 
+   } 
+   return flag; 
+} 
+
 window.onload = function(){  
-	// if(document.documentElement.scrollHeight<document.documentElement.clientHeiht){
-	// 	var bodyTag =  document.getElemenstByTagName("body")[0];
-	// 	bodyTag.style.height = document.documentElement.clientWidth/screen.width*screen.height+"px";
-	// }
+	if(document.documentElement.scrollHeight<document.documentElement.clientHeiht){
+		var bodyTag =  document.getElemenstByTagName("body")[0];
+		bodyTag.style.height = document.documentElement.clientWidth/screen.width*screen.height+"px";
+	}
+	/*手机端页面加载的时候全屏*/
 	setTimeout(function(){
 		window.scrollTo(0,1);
 	},0);
+
+	/*单击书签按钮*/
+	swModule.navBar.bmark.click();
+
+	document.onclick = function(event){
+		var eve = window.event || event ; 
+		var ele = eve['srcElement']||eve['target'];
+		if(ele.id!='toggleBtn'){
+			document.getElementById('toggleBtn').click();
+		}
+	}
 }
