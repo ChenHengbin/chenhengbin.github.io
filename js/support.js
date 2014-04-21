@@ -36,7 +36,7 @@ function NavBar(){
  		for (var i = contents.length - 1; i >= 0; i--) {
  			contents[i].style.display = "none";
  		};
- 		document.getElementById(id+"-content").display = "";
+ 		document.getElementById(id+"-content").style.display = "";
  	}
  }
 
