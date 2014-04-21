@@ -1,5 +1,5 @@
 function BmarkCntl($scope,$http){
-	$.scope.getBmarkList = function(){
+	$scope.getBmarkList = function(){
 		$http.get(swModule.constant.BOOK_MARK_URL).success(function(data, status, headers, config) {
 		$scope.bookMarks = data;
 		});	
