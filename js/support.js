@@ -11,14 +11,26 @@ function NavBar(){
 	this.sche = document.getElementById("sche");
 	this.bmark.onclick = function(){
 		document.getElementById("getBmarkBtn").click();
+		switchActive("bmark");
 	}
 
 	this.dream.onclick = function(){
 		document.getElementById("getDreamBtn").click();
+		switchActive("dream");
 	}
 
 	this.sche.onclick = function(){
 		document.getElementById("getScheBtn").click();
+		switchActive("sche");
+ 	}
+
+ 	function switchActive(id){
+ 		var ul = document.querySelector(".navbar-nav");
+ 		var childList = ul.childNodes;
+ 		for (var i = childList.length - 1; i >= 0; i--) {
+ 			childList[i].classList.remove("active");
+ 		};
+ 		document.getElementById(id).classList.add("active");
  	}
 }
 
