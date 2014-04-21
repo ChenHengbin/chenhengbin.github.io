@@ -66,7 +66,7 @@
 	<div ng-repeat="dream in dreams">
 		<h3>{{dream.target}}</h3>
 		<ul class="list-group">
-		   <li class="list-group-item list-group-item-info" ng-repeat="item in dream.list">
+		   <li class="list-group-item list-group-item-info" ng-repeat="item in dream.progress">
 		  	    {{item.time}}<br>
 		  	    {{item.content}}
 		   </li>
@@ -78,7 +78,7 @@
 	<div>
 		<ul class="list-group">
 		   <li class="list-group-item list-group-item-info" ng-repeat="sche in sches">
-		  	    <h1>{{sche.title}}</h1>
+		  	    <h3>{{sche.title}}</h3>
 		  	    <p>{{sche.time}}</p>
 		  	    <p>{{sche.location}}</p>
 		   </li>
