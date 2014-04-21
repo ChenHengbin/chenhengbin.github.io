@@ -24,6 +24,7 @@ function NavBar(){
 		switchActive("sche");
  	}
 
+ 	//点击导航栏按钮后，改变导航栏的样式和网页中的内容
  	function switchActive(id){
  		var ul = document.querySelector(".navbar-nav");
  		var childList = ul.childNodes;
@@ -31,8 +32,15 @@ function NavBar(){
  			childList[i].className="";
  		};
  		document.getElementById(id).className="active";
+ 		var contents = document.getElementsByClassName("content");
+ 		for (var i = contents.length - 1; i >= 0; i--) {
+ 			contents[i].style.opacity = 0;
+ 			contents[i].style.filter = "alpha(opacity=0)";
+ 		};
+ 		document.getElementById(id+"-content").style.opacity = 1;
  	}
-}
+
+ }
 
 /*手机端页面加载的时候全屏*/
 window.onload = function(){  

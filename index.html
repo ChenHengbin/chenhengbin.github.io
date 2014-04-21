@@ -20,6 +20,10 @@
 			border-radius: 0px;
       		border-bottom:1px solid #464647;
     	}
+    	.content{
+    		opacity: 0;
+    		filter:aplpha(opacity=0);
+    	}
 	</style>
 </head>
 <body>
@@ -50,7 +54,7 @@
 <br/>
 <br/>
 
-<div class="container"  ng-controller="BmarkCntl" id="BookMark">
+<div class="container content"  ng-controller="BmarkCntl" id="bmark-content">
 	<button ng-click="getBmarkList()" hidden id="getBmarkBtn"></button>
 	<div ng-repeat="cate in bookMarks">
 		<h3>{{cate.category}}</h3>
@@ -62,7 +66,7 @@
 	</div>
 </div>
 
-<div class="container"  ng-controller="DreamContl" id="Dream">
+<div class="container content"  ng-controller="DreamContl" id="dream-content">
 	<button ng-click="getDreamList()" hidden id="getDreamBtn"></button>
 	<div ng-repeat="dream in dreams">
 		<h3>{{dream.target}}</h3>
@@ -75,7 +79,7 @@
 	</div>
 </div>
 
-<div class="container"  ng-controller="ScheContl" id="Sche">
+<div class="container content"  ng-controller="ScheContl" id="sche-content">
 	<button ng-click="getScheList()" hidden id="getScheBtn"></button>
 	<div>
 		<ul class="list-group">
