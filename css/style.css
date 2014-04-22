@@ -1,0 +1,31 @@
+*{
+	font-family: "Microsoft yahei";
+}
+body{
+	color:white;
+	background: none repeat scroll 0% 0% #333;
+}
+.navbar-inverse{
+	border-radius: 0px;
+		border-bottom:1px solid #464647;
+}
+.content{
+	-webkit-transition:display ease 1s;
+	transition:display ease 1s;
+}
+.panel{
+	background-color: #333333;
+	border:none;
+}
+.panel-heading{
+	margin-top: 10px;
+	border-radius:5px 5px 0px 0px;
+}
+.panel-body{
+	color:blue;
+	background-color: white;
+	border-radius:0px 0px 5px 5px;	
+}
+#sche-content{
+	margin-top: 15px;
+}
