@@ -70,34 +70,15 @@
 <br/>
 <br/>
 
-<div class="container content"  ng-controller="BmarkCntl" id="bmark-content">
-	<button ng-click="getBmarkList()" hidden id="getBmarkBtn"></button>
-	<div ng-repeat="cate in bookMarks">
-		<h3 ng-bind="cate.category"></h3>
-		<ul class="list-group">
-		   <li class="list-group-item list-group-item-info" ng-repeat="item in cate.list">
-		  	    <a href="{{item.url}}" target="_blank">
-					<span ng-bind="item.desc"></span>
-		  	    </a>
-		   </li>
-		</ul>
-	</div>
+<div class="container content"  ng-controller="BmarkCntl" id="bmark-content" ng-include="'bmark_content.html'">
+
 </div>
 
-<div class="container content"  ng-controller="DreamContl" id="dream-content">
-	<button ng-click="getDreamList()" hidden id="getDreamBtn"></button>
-	<div ng-repeat="dream in dreams">
-		<h3 ng-bind="dream.target"></h3>
-		<ul class="list-group">
-		   <li class="list-group-item list-group-item-info" ng-repeat="item in dream.progress">
-		  	    <span ng-bind="item.time"></span><br>
-		  	    <span ng-bind="item.content"></span>
-		   </li>
-		</ul>
-	</div>
+<div class="container content"  ng-controller="DreamContl" id="dream-content" ng-include="'dream_content.html'">
+
 </div>
 
-<div class="container content"  ng-controller="ScheContl" id="sche-content">
+<div class="container content"  ng-controller="ScheContl" id="sche-content" ng-include="'sche_content.html'">
 	<button ng-click="getScheList()" hidden id="getScheBtn"></button>
 	<div class="row">
 	 	<div class="panel panel-info col-md-4 col-sm-6" ng-repeat="sche in sches">
@@ -121,5 +102,39 @@
 <script src="js/Constant.js"></script>
 <script src="js/NavBar.js"></script>
 <script src="js/support.js"></script>
+<script type="text/ng-template" id="bmark_content.html">
+	<button ng-click="getBmarkList()" hidden id="getBmarkBtn"></button>
+	<div ng-repeat="cate in bookMarks">
+		<h3 ng-bind="cate.category"></h3>
+		<ul class="list-group">
+		   <li class="list-group-item list-group-item-info" ng-repeat="item in cate.list">
+		  	    <a href="{{item.url}}" target="_blank">
+					<span ng-bind="item.desc"></span>
+		  	    </a>
+		   </li>
+		</ul>
+	</div>
+</script>
+<script type="text/ng-template" id="dream_content.html">
+	<button ng-click="getDreamList()" hidden id="getDreamBtn"></button>
+	<div ng-repeat="dream in dreams">
+		<h3 ng-bind="dream.target"></h3>
+		<ul class="list-group">
+		   <li class="list-group-item list-group-item-info" ng-repeat="item in dream.progress">
+		  	    <span ng-bind="item.time"></span><br>
+		  	    <span ng-bind="item.content"></span>
+		   </li>
+		</ul>
+	</div>
+</script>
+<script type="text/ng-template" id="sche_content.html">
+	<button ng-click="getScheList()" hidden id="getScheBtn"></button>
+	<div class="row">
+	 	<div class="panel panel-info col-md-4 col-sm-6" ng-repeat="sche in sches">
+			<div class="panel-heading"><h3 ng-bind="sche.title"></h3></div>
+			<div class="panel-body"><p ng-bind="sche.time"></p><p ng-bind="sche.location"></p></div>
+	 	</div>
+	</div>
+</script>
 </body>
 </html>	
