@@ -79,13 +79,7 @@
 </div>
 
 <div class="container content"  ng-controller="ScheContl" id="sche-content" ng-include="'sche_content.html'">
-	<button ng-click="getScheList()" hidden id="getScheBtn"></button>
-	<div class="row">
-	 	<div class="panel panel-info col-md-4 col-sm-6" ng-repeat="sche in sches">
-			<div class="panel-heading"><h3 ng-bind="sche.title"></h3></div>
-			<div class="panel-body"><p ng-bind="sche.time"></p><p ng-bind="sche.location"></p></div>
-	 	</div>
-	</div>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
