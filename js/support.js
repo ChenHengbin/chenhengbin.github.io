@@ -19,7 +19,7 @@
 				var ele = eve['srcElement']||eve['target'];	
 				if(ele.id!='toggleBtn'){
 					toggleBtn.click();
-					ele.stopPropagation();
+					eve.stopPropagation();
 				}	
 			}
 		}
