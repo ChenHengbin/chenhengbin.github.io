@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div style="margin:0px auto;text-align:center;" >
+		<input value="" id="url"> <input type="button" value="添加课件地址" onclick="addTask();">
+		<br>
+		<div id="tasklist"></div>
+		<iframe id="ifr1" style="width:600px;height:600px;" src="">
+			
+		</iframe>
+	</div>
+	<script type="text/javascript">
+	var task = new Array();
+
+	//判断数组中是否已经存在该元素
+	Array.prototype.contains = function(item){
+		for (var i = this.length - 1; i >= 0; i--) { 
+			if(this[i] == item) return true;
+		};
+		return false;
+	}
+
+	//增加任务
+	function addTask(){
+		var url = document.getElementById("url").value;
+		if(!task.contains(url))task.push(url);
+		urlIter(task);  //update
+	}
+
+	//列出任务
+	function urlIter(task){
+		var tasklist = document.getElementById("tasklist");
+		tasklist.innerHTML='';
+		for (var i = task.length - 1; i >= 0; i--) {
+			var p = document.createElement("p");
+			var textNode = document.createTextNode(task[i]);
+			p.appendChild(textNode);
+			tasklist.appendChild(p);
+		};
+	}
+
+
+	var ifr1 = document.getElementById("ifr1");
+
+	ifr1.onload=function(){
+		alert(ifr1.contentWindow);
+		var body = ifr1.contentWindow.document.getElementsByTagName('body')[0];
+		var script = ifr1.contentWindow.document.createElement('script');
+		script.type = 'text/javascript';
+		script.src='http://www.simplewish.cn/js/auto_play.js';
+		body.appendChild(script);
+		
+		task.shift();
+		console.log('剩余任务:');
+		for (var i =task.length - 1; i >= 0; i--) {
+			console.log(task[i]+'\n');
+		};
+
+		alert(ifr1.contentWindow.document.title)
+		alert(ifr1.contentWindow.document.title.value == undefined);
+	}
+
+	//自动播放任务列表中的视频
+	function run(){
+		if(task.length>0) ifr1.src=task[0];
+	}
+
+
+	// var autoPlay = setInterval(function(){
+
+	// },30000);
+
+ifr1.src='http://www.lt-edu.net/Lesson/Studying.do?ID=1873&TItemID=28&CourseID=366&CategoryID=722&LID=984&Sign=78B19C7128E635727838239C61045833&CName=%D3%C5%D0%E3%BD%CC%D3%FD%BB%EE%B6%AF%B0%B8%C0%FD%D5%B9%CA%BE%BA%CD%C6%C0%CE%F6.&CaName=%C8%FD%A1%A2%CA%B5%CF%D6%B8%F6%D0%D4%BB%AF%BD%CC%D3%FD%B5%C4%D7%EE%BC%D1%CD%BE%BE%B6%A1%AA%A1%AA%C7%F8%D3%F2%BB%EE%B6%AF&LName=3-2.%CC%E5%BC%EC%D6%D0%D0%C4%B0%B8%C0%FD';
+
+	
+	</script>
+	
+</body>
+</html>
