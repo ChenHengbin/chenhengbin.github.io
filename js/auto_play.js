@@ -1,5 +1,5 @@
 ﻿function run(){
-	if(typeof(minutes)!='undefined'&typeof(seconds)!='undefined'){
+	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
 		console.log('remains:'+minutes+'minutes'+seconds+'seconds');
 	}
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
