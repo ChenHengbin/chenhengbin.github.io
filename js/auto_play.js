@@ -8,13 +8,13 @@
 
 function run(){
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
-		console.log('remains:'+minutes+'minutes'+seconds+'seconds');
+		console.log('remains: '+minutes+' minutes '+seconds+' seconds');
 	}
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		thisPlayer.pause();//暂停播放
 		var url = document.getElementById('nextUrl').value;
 		console.log('------------url---------------');
-		console.log('本视频已看完,3分钟后播放的视频地址是:\n'+url);
+		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
 		setTimeout(function(){
 				window.location=url;
 		},180000);	
