@@ -1,4 +1,12 @@
-﻿function run(){
+﻿var setTime = setInterval(function(){   //设置为10分钟
+	if(document.getElementById('ChangeTimer10')){
+		document.getElementById('ChangeTimer10').click();
+		console.log("已设置为:10分钟!");
+		clearInterval(setTime);
+	}
+},1000);
+
+function run(){
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
 		console.log('remains:'+minutes+'minutes'+seconds+'seconds');
 	}
@@ -6,11 +14,12 @@
 		thisPlayer.pause();//暂停播放
 		var url = document.getElementById('nextUrl').value;
 		console.log('------------url---------------');
-		console.log(url);
+		console.log('本视频已看完,3分钟后播放的视频地址是:\n'+url);
 		setTimeout(function(){
 				window.location=url;
 		},180000);	
 		clearInterval(auto_play);//停止轮询
+		return;
 	}
 	if(thisPlayer.getState()=='PAUSED'&&document.getElementById('RecordBut').disabled==true||
 	   thisPlayer.getState()=='IDLE'&&document.getElementById('RecordBut').disabled==true){
