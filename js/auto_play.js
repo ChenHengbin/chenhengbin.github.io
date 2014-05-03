@@ -1,6 +1,6 @@
-function run(){
+﻿function run(){
 	if(typeof(minutes)!='undefined'&typeof(seconds)!='undefined'){
-		console.log('还剩'+minutes+'分'+seconds+'秒');
+		console.log('remains:'+minutes+'minutes'+seconds+'seconds');
 	}
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		console.log('--------');
