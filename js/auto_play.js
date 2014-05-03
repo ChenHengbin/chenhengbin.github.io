@@ -1,5 +1,4 @@
-﻿document.getElementById('ChangeTimer10').click();  //选中10分钟
-function run(){
+﻿function run(){
 	if(typeof(minutes)!='undefined'&typeof(seconds)!='undefined'){
 		console.log('remains:'+minutes+'minutes'+seconds+'seconds');
 	}
