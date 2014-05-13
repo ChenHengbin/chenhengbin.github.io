@@ -27,9 +27,16 @@ function run(){
 	}
 	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false){
 		document.getElementById('RecordBut').click();
-		document.getElementById('ChangeTimer10').click(); 
+		var minus = thisPlayer.getDuration() - parseInt(document.getElementById("RecordTime").innerHTML)*60;
+		if(minus<=60){
+			document.getElementById('ChangeTimer1').click();	
+		}else if(minus<=300){
+			document.getElementById('ChangeTimer5').click();
+		}else{
+			document.getElementById('ChangeTimer10').click(); 	
+		}
 		document.getElementById('RecordBut').disabled = 'true';
 	}
 }
 
-auto_play = setInterval('run()',30000);
+auto_play = setInterval('run()',15000);
