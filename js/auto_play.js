@@ -26,8 +26,9 @@ function run(){
 		thisPlayer.play();
 	}
 	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false){
+		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
-		var minus = thisPlayer.getDuration() - parseInt(document.getElementById("RecordTime").innerHTML)*60;
+		document.getElementById('RecordBut').disabled = 'true';
 		if(minus<=60){
 			document.getElementById('ChangeTimer1').click();	
 		}else if(minus<=300){
@@ -35,7 +36,6 @@ function run(){
 		}else{
 			document.getElementById('ChangeTimer10').click(); 	
 		}
-		document.getElementById('RecordBut').disabled = 'true';
 	}
 }
 
