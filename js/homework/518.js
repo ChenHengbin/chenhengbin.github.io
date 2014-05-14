@@ -1,4 +1,4 @@
-//一、1
+﻿//一、1
 document.getElementsByName('Ans1088')[0].value='氧气';
 document.getElementsByName('Ans1088')[1].value='二氧化碳';
 //一、2

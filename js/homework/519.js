@@ -1,4 +1,4 @@
-//一、1
+﻿//一、1
 document.getElementsByName('Ans1138')[0].value='蛋白质';
 document.getElementsByName('Ans1138')[1].value='碳水化合物';
 document.getElementsByName('Ans1138')[2].value='脂肪';

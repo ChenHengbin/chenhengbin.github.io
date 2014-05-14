@@ -1,4 +1,4 @@
-//一、1
+﻿//一、1
 document.getElementsByName('Ans1185')[0].value='安静进餐';
 //一、2
 document.getElementsByName('Ans1186')[0].value='多';

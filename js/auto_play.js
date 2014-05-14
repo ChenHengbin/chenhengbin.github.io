@@ -29,9 +29,9 @@ function run(){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
-		if(minus<=60){
+		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
-		}else if(minus<=300){
+		}else if(minus<=500){
 			document.getElementById('ChangeTimer5').click();
 		}else{
 			document.getElementById('ChangeTimer10').click(); 	
