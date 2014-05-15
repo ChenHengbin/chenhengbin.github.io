@@ -1,4 +1,4 @@
-//一、1
+﻿//一、1
 document.getElementsByName('Ans916')[0].value='韵腹';
 //一、2
 document.getElementsByName('Ans917')[0].value='阳平';

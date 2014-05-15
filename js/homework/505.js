@@ -1,4 +1,4 @@
-//一、1
+﻿//一、1
 document.getElementsByName('Ans941')[0].value='字调';
 //一、2
 document.getElementsByName('Ans942')[0].value='iu';
