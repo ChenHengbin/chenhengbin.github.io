@@ -1,7 +1,10 @@
-﻿var setTime = setInterval(function(){   //设置为10分钟
+﻿var last_remains;  //上次还剩余的时间
+
+var setTime = setInterval(function(){   //设置为10分钟
 	if(document.getElementById('ChangeTimer10')){
 		document.getElementById('ChangeTimer10').click();
 		console.log("已设置为:10分钟!");
+		last_remains = 600;
 		clearInterval(setTime);
 	}
 },1000);
@@ -9,6 +12,10 @@
 function run(){
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
 		console.log('remains: '+minutes+' minutes '+seconds+' seconds');
+		if(last_remains-(minutes*60+seconds)<=13){   //网速不够，卡住了，重新播放
+			thisPlayer.seek(0);
+		}
+		last_remains = minutes*60+seconds;
 	}
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		thisPlayer.pause();//暂停播放
@@ -31,10 +38,13 @@ function run(){
 		document.getElementById('RecordBut').disabled = 'true';
 		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
+			last_remains = 60;
 		}else if(minus<=500){
 			document.getElementById('ChangeTimer5').click();
+			last_remains = 300;
 		}else{
 			document.getElementById('ChangeTimer10').click(); 	
+			last_remains = 600;
 		}
 	}
 }
