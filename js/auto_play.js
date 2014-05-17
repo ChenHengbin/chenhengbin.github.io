@@ -12,7 +12,7 @@ var setTime = setInterval(function(){   //设置为10分钟
 function run(){
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
 		console.log('remains: '+minutes+' minutes '+seconds+' seconds');
-		if(last_remains-(minutes*60+seconds)<=13){   //网速不够，卡住了，重新播放
+		if(last_remains-(minutes*60+seconds)<=11){   //网速不够，卡住了，重新播放
 			thisPlayer.seek(0);
 		}
 		last_remains = minutes*60+seconds;
