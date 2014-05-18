@@ -10,6 +10,9 @@ var setTime = setInterval(function(){   //设置为10分钟
 },1000);
 
 function run(){
+	if(thisPlayer.getState()=='BUFFERING'){  //如果正在缓冲状态,则将其设置为播放
+		thisPlayer.play();
+	} 
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
 		console.log('remains: '+minutes+' minutes '+seconds+' seconds');
 		if(last_remains-(minutes*60+seconds)<=11){   //网速不够，卡住了，重新播放
