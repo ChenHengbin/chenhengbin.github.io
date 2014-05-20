@@ -1,7 +1,7 @@
 ﻿//一、1
 document.getElementsByName('Ans1025')[0].value='收集资料';
 document.getElementsByName('Ans1025')[1].value='整理资料';
-document.getElementsByName('Ans1025')[2].value='机体讨论交流';
+document.getElementsByName('Ans1025')[2].value='集体讨论交流';
 //一、2
 document.getElementsByName('Ans1026')[0].value='集体讨论';
 document.getElementsByName('Ans1026')[1].value='语言能力';
@@ -23,6 +23,7 @@ document.getElementsByName('Ans1030')[0].value='演示-操作-交流表达-展�
 
 
 //二、1
+document.getElementById('Ans60').click();
 document.getElementById('Ans61').click();
 document.getElementById('Ans62').click();
 document.getElementById('Ans63').click();

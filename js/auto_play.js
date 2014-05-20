@@ -13,28 +13,41 @@ function run(){
 	if(thisPlayer.getState()=='BUFFERING'){  //如果正在缓冲状态,则将其设置为播放
 		thisPlayer.play();
 	} 
-	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'){
+
+	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'&&minutes!=0&&seconds!=0){
 		console.log('remains: '+minutes+' minutes '+seconds+' seconds');
 		if(last_remains-(minutes*60+seconds)<=11){   //网速不够，卡住了，重新播放
 			thisPlayer.seek(0);
 		}
 		last_remains = minutes*60+seconds;
 	}
+	
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		thisPlayer.pause();//暂停播放
-		var url = document.getElementById('nextUrl').value;
-		console.log('------------url---------------');
-		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
-		setTimeout(function(){
-				window.location=url;
-		},180000);	
-		clearInterval(auto_play);//停止轮询
+
+		if(document.getElementById('nextUrl')){
+			var url = document.getElementById('nextUrl').value;
+			console.log('------------url---------------');
+			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
+			setTimeout(function(){
+					window.location=url;
+			},180000);	
+			clearInterval(auto_play);//停止轮询
+		}else if(document.getElementById('isLast')){
+			var isLast = document.getElementById('isLast').value;
+			if(isLast=='true'){
+				window.close();
+			}
+		}
+
 		return;
 	}
+
 	if(thisPlayer.getState()=='PAUSED'&&document.getElementById('RecordBut').disabled==true||
 	   thisPlayer.getState()=='IDLE'&&document.getElementById('RecordBut').disabled==true){
 		thisPlayer.play();
 	}
+
 	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
