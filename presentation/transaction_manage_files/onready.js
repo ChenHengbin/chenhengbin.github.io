@@ -1,4 +1,4 @@
-var ready = (function(){    
+﻿var ready = (function(){    
     var readyList,
         DOMContentLoaded,
         class2type = {};
