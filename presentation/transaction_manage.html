@@ -1,0 +1,460 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+	<meta name="viewport" content="width=device-width">
+	<title>transaction_manage</title>
+	<link rel="stylesheet" href="transaction_manage_files/default-reset.css">
+	<link rel="stylesheet" type="text/css" href="transaction_manage_files/main.css">
+	<link rel="stylesheet" href="transaction_manage_files/default.css" id="theme">
+	<link href="transaction_manage_files/web-fonts.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="transaction_manage_files/demo.css">
+	<link rel="stylesheet" type="text/css" href="transaction_manage_files/themes.css">
+	<link href="transaction_manage_files/backgroundClasses.css" rel="stylesheet" type="text/css">
+	<link href="transaction_manage_files/surfaceClasses.css" rel="stylesheet" type="text/css">
+
+	<style type="text/css">
+	.componentContainer {
+	    position: absolute;
+	    line-height: normal;
+	    /*-webkit-transform-origin: 135% 135%;
+	    -moz-transform-origin: 135% 135%;
+	    transform-origin: 135% 135%;*/
+	}
+
+	.transformContainer {
+	    -webkit-transform-origin: 0 0;
+	    -moz-transform-origin: 0 0;
+	    transform-origin: 0 0;
+	}
+
+	.bg {
+	    width: 100%;
+	    height: 100%;
+	}
+
+	#themeChooser {
+		position: absolute;
+		z-index: 1;
+		background-color: #EEE;
+		border-radius: 5px;
+		padding: 10px;
+	}
+
+	#main, body {
+		overflow: hidden;
+	}
+
+	.reveal.themedArea {
+	    display: block;
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    z-index: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+	</style>
+
+	<script src="transaction_manage_files/analytics.js" async=""></script><script src="transaction_manage_files/bespoke.js"></script>
+	<script src="transaction_manage_files/bespoke-plugins.js"></script>
+	<script src="transaction_manage_files/onready.js"></script>
+	<script src="transaction_manage_files/loadPresentation.js"></script>
+	<script>
+	ready(function() {
+		if (document.getElementById('launched-placeholder'))
+        	loadPresentation();
+		if (!window.presStarted) {
+    		bespoke.horizontal.from('article', {
+    			hash: true,
+    			state: true
+    		});
+		}
+	});
+	</script>
+	<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-42322531-1', 'strut.io');
+  	ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<style>
+	/*.example {
+	border: 4px groove orange;
+}*/
+.strut-surface *{
+  font-family:'微软雅黑';
+}
+	</style>
+	<style>
+	
+	</style>
+	<style>
+
+
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+	
+		
+		
+	
+
+</style>
+	<div id="main" class="bg-default strut-surface cubeb">
+		<article class="innerBg bespoke-parent strut-slide-0">
+			
+				
+					<section class="slideContainer strut-slide-0 bespoke-slide bespoke-active" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-0">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 280px; left: 166px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 72px;" class="antialias">
+Spring的事务管理机制
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 609px; left: 665px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+主讲：陈亨斌<br>M201376072<br>
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-1 bespoke-slide bespoke-inactive bespoke-after bespoke-after-1" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-1">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 280px; left: 272px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 48px;" class="antialias">
+Q1:事务管理的流程？
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-2 bespoke-slide bespoke-inactive bespoke-after bespoke-after-2" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-2">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 80px; left: 82px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 24px;" class="antialias">
+try { &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conn = DriverManager.getConnection("....database connection string.."); &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //点禁止自动提交，设置回退 &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conn.setAutoCommit(false);&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt = conn.createStatement(); &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //数据库更新操作<br><font color="#194bd1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stmt.executeUpdate(“some SQL statement”);&nbsp; &nbsp;</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //事务提交 &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conn.commit();&nbsp; //显示结束事务<br>} &nbsp;<br>catch(Exception ex) {&nbsp; &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ex.printStackTrace(); &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try { &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //操作不成功则回退 &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conn.rollback(); &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch(Exception e){ &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace(); &nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } &nbsp;<br>}&nbsp;&nbsp;&nbsp; <br>
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 10px; left: 324px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+解决方案一：编程式事务管理
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-3 bespoke-slide bespoke-inactive bespoke-after bespoke-after-3" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-3">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 280px; left: 280px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 48px;" class="antialias">
+Q2:如何抽象这个流程？
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-4 bespoke-slide bespoke-inactive bespoke-after bespoke-after-4" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-4">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 246px; left: 367px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+1、获得数据库连接<br>2、开始事务<br><font color="#194bd1">3、执行相关数据库操作</font><br>4、提交或者回滚事务<br>5、关闭数据库连接<br>
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 241px; left: 219px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+共性
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 344px; left: 218px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+<font color="#194bd1">特性</font>
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 291px; left: 219px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+共性
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 391px; left: 219px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+共性
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 441px; left: 219px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+共性
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-5 bespoke-slide bespoke-inactive bespoke-after bespoke-after-5" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-5">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 10px; left: 324px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+解决方案二:声明式事务管理
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 396px; left: 96px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 24px;" class="antialias">
+&nbsp;&nbsp; &nbsp; <b>&lt;!-- 对于以save、del、update开头的方法应用事务 --&gt;</b><br>&nbsp;&nbsp; &nbsp; &lt;tx:advice id="smAdvice" transaction-manager="transactionManager"&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;tx:attributes&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;tx:method name="save*" <b>propagation</b>="REQUIRED"/&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;tx:method name="del*" <b>propagation</b>="REQUIRED"/&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;tx:method name="update*" <b>propagation</b>="REQUIRED"/&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &lt;/tx:attributes&gt;<br>&nbsp;&nbsp; &nbsp; &lt;/tx:advice&gt;
+</div>
+</div>
+</div>
+						
+							<div class="componentContainer " style="top: 150px; left: 136px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 24px;" class="antialias">
+&nbsp; //Service层代码<br>&nbsp; //保存一个游戏<br>&nbsp; public void save(Game game) {<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;gameDao.saveOrUpdate(game);<br>&nbsp;&nbsp; &nbsp;}
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-6 bespoke-slide bespoke-inactive bespoke-after bespoke-after-6" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-6">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 280px; left: 169px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 48px;" class="antialias">
+Q3：声明式事务管理的设计思想？
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-7 bespoke-slide bespoke-inactive bespoke-after bespoke-after-7" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-7">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 226px; left: 185px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+<b>AOP</b>:通过分离应用的业务逻辑与系统级服务<br>进行内聚性的开发，应用对象只实现业务逻<br>辑即可。<br><b>主要功能</b>:日志记录,性能统计,安全控制,事务处<br>理,异常处理等<br><br>
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-8 bespoke-slide bespoke-inactive bespoke-after bespoke-after-8" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-8">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 280px; left: 220px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 48px;" class="antialias">
+Q4：Spring事务管理的属性？
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-9 bespoke-slide bespoke-inactive bespoke-after bespoke-after-9" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-9">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 50px; left: 50px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+<b>4.1 事务的隔离级别</b>
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+				
+					<section class="slideContainer strut-slide-10 bespoke-slide bespoke-inactive bespoke-after bespoke-after-10" style="width: 1024px; height: 768px;" data-bespoke-state="strut-slide-10">
+						<div class="themedArea">
+              			
+              			</div>
+						
+							<div class="componentContainer " style="top: 50px; left: 50px; -webkit-transform:   ; -moz-transform:   ; transform:   ; width: px; height: px;">
+<div class="transformContainer" style="-webkit-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
+transform: scale(1, 1)">
+<div style="font-size: 36px;" class="antialias">
+<b>4.2 事务的传播性质</b><br>
+</div>
+</div>
+</div>
+						
+					</section>
+				
+			
+		</article>
+	</div>
+
+</body></html>
