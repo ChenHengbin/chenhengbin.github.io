@@ -31,7 +31,7 @@ function run(){
 			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
 			setTimeout(function(){
 					window.location=url;
-			},180000);	
+			},190000);	
 			clearInterval(auto_play);//停止轮询
 		}else if(document.getElementById('isLast')){
 			var isLast = document.getElementById('isLast').value;
