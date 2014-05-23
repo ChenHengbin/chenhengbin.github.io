@@ -33,11 +33,6 @@ function run(){
 					window.location=url;
 			},190000);	
 			clearInterval(auto_play);//停止轮询
-		}else if(document.getElementById('isLast')){
-			var isLast = document.getElementById('isLast').value;
-			if(isLast=='true'){
-				window.close();
-			}
 		}
 
 		return;
