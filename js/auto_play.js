@@ -28,7 +28,7 @@ function run(){
 		// var url = document.getElementById('nextUrl').value;
 		var url = JSON.parse(localStorage.task);
 		url = url[localStorage.currentTask];
-		localStorage.currentTask++;
+		localStorage.currentTask = localStorage.currentTask+1;
 		console.log('------------url---------------');
 		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
 		setTimeout(function(){ 
@@ -57,7 +57,7 @@ function run(){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
-		localStorage.lastActiveTime = new Date().getTime; 
+		localStorage.lastActiveTime = new Date().getTime(); 
 		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
 			last_remains = 60;
