@@ -1,13 +1,13 @@
 ﻿var last_remains;  //上次还剩余的时间
 
-var setTime = setInterval(function(){   //设置为10分钟
-	if(document.getElementById('ChangeTimer10')){
-		document.getElementById('ChangeTimer10').click();
-		console.log("已设置为:10分钟!");
-		last_remains = 600;
+var setTime = setInterval(function(){   //设置为15分钟
+	if(document.getElementById('ChangeTimer15')){
+		document.getElementById('ChangeTimer15').click();
+		console.log("已设置为:15分钟!");
+		last_remains = 900;
 		clearInterval(setTime);
 	}
-},1000);
+},1500);
 
 function run(){
 	if(thisPlayer.getState()=='BUFFERING'){  //如果正在缓冲状态,则将其设置为播放
@@ -29,10 +29,17 @@ function run(){
 			var url = document.getElementById('nextUrl').value;
 			console.log('------------url---------------');
 			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
-			setTimeout(function(){
-					window.location=url;
-			},190000);	
-			clearInterval(auto_play);//停止轮询
+			setTimeout(function(){ 
+				setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
+					if(new Date() - localStorage.lastActiveTime >= localStorage.maxInterval&&
+						localStorage.currentPlayCount<localStorage.maxPlayCount){
+						window.location = url;
+						localStorage.currentPlayCount--;
+						clearInterval(auto_play);
+						clearInterval(this);
+					}
+				},10000);
+			},180000);	
 		}
 
 		return;
@@ -43,21 +50,27 @@ function run(){
 		thisPlayer.play();
 	}
 
-	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false){
+	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false&&
+		new Date() - localStorage.lastActiveTime >= localStorage.maxInterval){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
+		localStorage.lastActiveTime = new Date(); 
 		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
 			last_remains = 60;
 		}else if(minus<=500){
 			document.getElementById('ChangeTimer5').click();
 			last_remains = 300;
-		}else{
+		}else if(minus<=750){
 			document.getElementById('ChangeTimer10').click(); 	
 			last_remains = 600;
+		}else{
+			document.getElementById('ChangeTimer15').click();
+			last_remains = 900;
 		}
 	}
 }
 
 auto_play = setInterval('run()',15000);
+
