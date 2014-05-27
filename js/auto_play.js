@@ -35,13 +35,12 @@ function run(){
 						localStorage.currentPlayCount<localStorage.maxPlayCount){
 						window.location = url;
 						localStorage.currentPlayCount--;
-						clearInterval(auto_play);
 						clearInterval(this);
 					}
 				},10000);
 			},180000);	
 		}
-
+		clearInterval(auto_play);
 		return;
 	}
 
