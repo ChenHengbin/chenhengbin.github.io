@@ -37,8 +37,8 @@ function run(){
 						localStorage.currentPlayCount--;
 						clearInterval(this);
 					}
-					console.log('当前视频数量:'+localStorage.currentPlayCount);
-					console.log('距离上次操作时间：'+(new Date().getTime()-parseInt(localStorage.lastActiveTime))/1000+'秒');
+					// console.log('当前视频数量:'+localStorage.currentPlayCount);
+					// console.log('距离上次操作时间：'+(new Date().getTime()-parseInt(localStorage.lastActiveTime))/1000+'秒');
 				},10000);
 			},parseInt(localStorage.maxInterval));	
 		}
