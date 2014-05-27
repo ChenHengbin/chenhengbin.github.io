@@ -24,24 +24,24 @@ function run(){
 	
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		thisPlayer.pause();//暂停播放
-
-		if(document.getElementById('nextUrl')){
-			var url = document.getElementById('nextUrl').value;
-			console.log('------------url---------------');
-			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
-			setTimeout(function(){ 
-				setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
-					if(new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval&&
-						localStorage.currentPlayCount<localStorage.maxPlayCount){
-						window.location = url;
-						localStorage.currentPlayCount--;
-						clearInterval(this);
-					}
-					// console.log('当前视频数量:'+localStorage.currentPlayCount);
-					// console.log('距离上次操作时间：'+(new Date().getTime()-parseInt(localStorage.lastActiveTime))/1000+'秒');
-				},10000);
-			},parseInt(localStorage.maxInterval));	
-		}
+		
+		// var url = document.getElementById('nextUrl').value;
+		var url = localStorage.task[localStorage.currentTask];
+		localStorage.currentTask++;
+		console.log('------------url---------------');
+		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
+		setTimeout(function(){ 
+			setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
+				if(new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval&&
+					localStorage.currentPlayCount<localStorage.maxPlayCount){
+					window.location = url;
+					clearInterval(this);
+				}
+				// console.log('当前视频数量:'+localStorage.currentPlayCount);
+				// console.log('距离上次操作时间：'+(new Date().getTime()-parseInt(localStorage.lastActiveTime))/1000+'秒');
+			},10000);
+		},parseInt(localStorage.maxInterval));	
+		
 		clearInterval(auto_play);
 		return;
 	}
@@ -73,5 +73,10 @@ function run(){
 	}
 }
 
+window.onunload = function(){
+	localStorage.currentPlayCount--;
+}
+
 auto_play = setInterval('run()',15000);
+
 
