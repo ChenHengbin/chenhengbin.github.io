@@ -31,14 +31,16 @@ function run(){
 			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
 			setTimeout(function(){ 
 				setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
-					if(new Date() - localStorage.lastActiveTime >= localStorage.maxInterval&&
+					if(new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval&&
 						localStorage.currentPlayCount<localStorage.maxPlayCount){
 						window.location = url;
 						localStorage.currentPlayCount--;
 						clearInterval(this);
 					}
+					console.log('当前视频数量:'+localStorage.currentPlayCount);
+					console.log('距离上次操作时间：'+(new Date().getTime()-parseInt(localStorage.lastActiveTime))/1000+'秒');
 				},10000);
-			},180000);	
+			},parseInt(localStorage.maxInterval));	
 		}
 		clearInterval(auto_play);
 		return;
@@ -50,11 +52,11 @@ function run(){
 	}
 
 	if(minutes==0&&seconds==0&&document.getElementById('RecordBut').disabled==false&&
-		new Date() - localStorage.lastActiveTime >= localStorage.maxInterval){
+		new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
-		localStorage.lastActiveTime = new Date(); 
+		localStorage.lastActiveTime = new Date().getTime; 
 		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
 			last_remains = 60;
