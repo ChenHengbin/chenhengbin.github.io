@@ -24,17 +24,18 @@ function run(){
 	
 	if(document.getElementById("string").innerHTML=='此课件观看时长已满足！'){
 		thisPlayer.pause();//暂停播放
-		
 		// var url = document.getElementById('nextUrl').value;
-		var url = JSON.parse(localStorage.task);
-		url = url[localStorage.currentTask];
-		localStorage.currentTask = parseInt(localStorage.currentTask)+1;
-		console.log('------------url---------------');
-		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
+		console.log('本视频已看完,请不要关闭本页面，3分钟后将播放另外一个视频！');
 		setTimeout(function(){ 
 			setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
 				if(new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval&&
 					localStorage.currentPlayCount<localStorage.maxPlayCount){
+					var url = JSON.parse(localStorage.task);
+					url = url[localStorage.currentTask];
+					if(typeof(url)=='undefined'){
+						window.close();
+					}
+					localStorage.currentTask = parseInt(localStorage.currentTask)+1;
 					window.location = url;
 					clearInterval(this);
 				}
