@@ -28,7 +28,7 @@ function run(){
 		// var url = document.getElementById('nextUrl').value;
 		var url = JSON.parse(localStorage.task);
 		url = url[localStorage.currentTask];
-		localStorage.currentTask = localStorage.currentTask+1;
+		localStorage.currentTask = parseInt(localStorage.currentTask)+1;
 		console.log('------------url---------------');
 		console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
 		setTimeout(function(){ 
