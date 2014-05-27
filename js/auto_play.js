@@ -35,7 +35,7 @@ function run(){
 					if(typeof(url)=='undefined'){
 						window.close();
 					}
-					localStorage.currentTask = parseInt(localStorage.currentTask)+1;
+					// localStorage.currentTask = parseInt(localStorage.currentTask)+1;
 					window.location = url;
 					clearInterval(this);
 				}
