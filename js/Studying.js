@@ -134,8 +134,9 @@ function ShowTimer(options) {
                             var BArray = IsUser[0].split("{*}");
                             if (BArray[1] != "0") {
                                 var reg = new RegExp("({n})", "g");
-                                alert(BArray[0].replace(reg, "\n"));
-                                Close("");
+                                //alert(BArray[0].replace(reg, "\n"));
+                                //Close("");
+                                console.log(BArray[0].replace(reg, "\n"));
                             } else {
                                 var BArr = BArray[0].split("{#}");
                                 ShowTimer({
