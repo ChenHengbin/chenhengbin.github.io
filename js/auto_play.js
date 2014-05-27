@@ -29,7 +29,7 @@ function run(){
 		setTimeout(function(){ 
 			setInterval(function(){   //打开新窗口的条件：(1)上次操作间隔(2)当前播放视频数量
 				if(new Date().getTime() - localStorage.lastActiveTime >= localStorage.maxInterval&&
-					localStorage.currentPlayCount<localStorage.maxPlayCount){
+					localStorage.currentPlayCount<=localStorage.maxPlayCount){
 					var url = JSON.parse(localStorage.task);
 					url = url[localStorage.currentTask];
 					if(typeof(url)=='undefined'){
@@ -76,7 +76,7 @@ function run(){
 }
 
 window.onunload = function(){
-	localStorage.currentPlayCount--;
+	localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 }
 
 auto_play = setInterval('run()',15000);
