@@ -61,7 +61,7 @@ function checkLoginCount(obj){
 		if(!localStorage.loginCount||parseInt(localStorage.loginCount)!=SArray[1]){
 			localStorage.loginCount = SArray[1];
 			localStorage.LessionList = '[]';
-		}else if(parseInt(localStorage.loginCount)==SArray[1]){
+		}else if(parseInt(localStorage.loginCount)==parseInt(SArray[1])){
 			runAtCenter();
 		}
     }
