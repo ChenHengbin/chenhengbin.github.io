@@ -1,5 +1,9 @@
 ﻿var last_remains;  //上次还剩余的时间
 
+if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
+	logout();
+}
+
 var setTime = setInterval(function(){   //设置为10分钟
 	if(document.getElementById('ChangeTimer10')){
 		document.getElementById('ChangeTimer10').click();
@@ -72,6 +76,19 @@ function list(){  //列出当前任务列表
 		console.log('第'+i+'个视频：');
 		console.log(LessionList[i]);
 	};
+}
+
+function logout(){
+	$.ajax({
+        type: "POST",
+        url: "/Ajax/Ajax.do?action=Logout",
+        success: function(data) {
+        	window.location.href = 'http://www.lt-edu.net/User/';
+        },
+        error:function(){
+        	alert('请重新登陆,插件才会正常工作!');
+        }
+    });
 }
 
 auto_play = setInterval('run()',15000);
