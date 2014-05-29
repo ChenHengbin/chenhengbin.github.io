@@ -9,6 +9,8 @@ var setTime = setInterval(function(){   //设置为10分钟
 	}
 },1000);
 
+console.log('任务列表中还剩下'+JSON.parse(localStorage.LessionList).length+'个课件');
+
 function run(){
 	if(thisPlayer.getState()=='BUFFERING'){  //如果正在缓冲状态,则将其设置为播放
 		thisPlayer.play();
@@ -61,6 +63,15 @@ function run(){
 			last_remains = 600;
 		}
 	}
+}
+
+function list(){  //列出当前任务列表
+	var LessionList = JSON.parse(localStorage.LessionList);
+	console.log('任务列表中共有'+LessionList.length+'个视频！');
+	for (var i = 0; i < LessionList.length; i++) {
+		console.log('第'+i+'个视频：');
+		console.log(LessionList[i]);
+	};
 }
 
 auto_play = setInterval('run()',15000);
