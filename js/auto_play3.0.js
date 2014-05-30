@@ -4,6 +4,20 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
 
+var detectCount = 0;  //轮询及时
+console.log('一分钟后页面仍然卡住,将会自动刷新。');
+var detectPlayer = setInterval(function(){
+	if(thisPlayer){  //如果播放器存在
+		clearInterval(detectPlayer);
+	}else{
+		detectCount ++ ;
+		if(detectCount>=30){
+			location.reload();   //刷新页面
+		}
+		console.log((60-detectCount*2)+'秒后页面未加载,将会自动刷新。');
+	}
+},2000);
+
 var setTime = setInterval(function(){   //设置为10分钟
 	if(document.getElementById('ChangeTimer10')){
 		document.getElementById('ChangeTimer10').click();
