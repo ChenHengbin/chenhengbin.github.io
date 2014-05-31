@@ -1,5 +1,9 @@
 ﻿var last_remains;  //上次还剩余的时间
 
+window.alert = function(str){
+	return ;
+}
+
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
