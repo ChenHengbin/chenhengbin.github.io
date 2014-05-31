@@ -4,6 +4,10 @@ window.alert = function(str){
 	return ;
 }
 
+window.close = function(){
+	return;
+}
+
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
