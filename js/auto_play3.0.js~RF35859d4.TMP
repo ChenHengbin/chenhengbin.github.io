@@ -4,7 +4,7 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
 
-var detectCount = 0;  //轮询计时
+var detectCount = 0;  //轮询及时
 var detectPlayer = setInterval(function(){
 	if(thisPlayer){  //如果播放器存在
 		clearInterval(detectPlayer);
