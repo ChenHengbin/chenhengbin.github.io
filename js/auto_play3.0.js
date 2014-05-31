@@ -1,13 +1,5 @@
 ﻿var last_remains;  //上次还剩余的时间
 
-window.alert = function(str){
-	return ;
-}
-
-window.close = function(){
-	return;
-}
-
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
@@ -59,7 +51,7 @@ function run(){
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
 					window.location=url;
-			},190000);	
+			},210000);	
 			clearInterval(auto_play);//停止轮询
 		}else{
 			alert('任务列表中已没有视频!');
