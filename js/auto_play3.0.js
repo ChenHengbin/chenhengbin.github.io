@@ -51,7 +51,7 @@ function run(){
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
 					window.location=url;
-			},210000);	
+			},280000);	
 			clearInterval(auto_play);//停止轮询
 		}else{
 			alert('任务列表中已没有视频!');
