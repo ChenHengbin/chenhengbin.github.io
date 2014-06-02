@@ -1,4 +1,4 @@
-﻿//功能：自动播放、智能选择1、5、10、15分钟
+﻿//功能：多个视频连续播放、只选择15分钟
 var last_remains;  //上次还剩余的时间
 
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
@@ -8,6 +8,7 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 var detectCount = 0;  //轮询计时
 var detectPlayer = setInterval(function(){
 	if(thisPlayer){  //如果播放器存在
+		detectResouce();
 		clearInterval(detectPlayer);
 	}else{
 		detectCount ++ ;
@@ -18,14 +19,22 @@ var detectPlayer = setInterval(function(){
 	}
 },2000);
 
-var setTime = setInterval(function(){   //设置为10分钟
-	if(document.getElementById('ChangeTimer10')){
-		document.getElementById('ChangeTimer10').click();
-		console.log("已设置为:10分钟!");
-		last_remains = 600;
+var setTime = setInterval(function(){   //设置为15分钟
+	if(document.getElementById('ChangeTimer15')){
+		document.getElementById('ChangeTimer15').click();
+		console.log("已设置为:15分钟!");
+		last_remains = 900;
 		clearInterval(setTime);
 	}
 },1000);
+
+localStorage.maxInterval = 300000; //最大操作时间间隔
+localStorage.maxPlayCount = 3;     //最大播放次数
+if(!localStorage.currentPlayCount){
+	localStorage.currentPlayCount = 1;
+}else{
+	localStorage.currentPlayCount = 1+parseInt(localStorage.currentPlayCount);
+}
 
 console.log('任务列表中还剩下'+JSON.parse(localStorage.LessionList).length+'个课件');
 
@@ -51,7 +60,8 @@ function run(){
 			console.log('剩余视频个数为:'+LessionList.length);			
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
-					window.location=url;
+				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
+				window.location=url;	
 			},300000);	
 			clearInterval(auto_play);//停止轮询
 		}else{
@@ -70,16 +80,8 @@ function run(){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
-		if(minus<=180){
-			document.getElementById('ChangeTimer1').click();	
-			last_remains = 60;
-		}else if(minus<=500){
-			document.getElementById('ChangeTimer5').click();
-			last_remains = 300;
-		}else{
-			document.getElementById('ChangeTimer10').click(); 	
-			last_remains = 600;
-		}
+		document.getElementById('ChangeTimer15').click(); 	
+		last_remains = 900;
 	}
 }
 
@@ -103,6 +105,43 @@ function logout(){
         	alert('请重新登陆,插件才会正常工作!');
         }
     });
+}
+
+function detectResouce(){  //检测flv资源是否加载，若没有加载，minutes变量是不存在的
+	var count = 0;
+	var detectMinutes = setInterval(function(){
+		if(typeof(minutes)=='undefined'){
+			count++;
+			console.log('资源五分钟未加载，则会自动切换下一个视频');
+			if(count>=30){ //资源五分钟未加载
+				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
+				window.location=getURL();
+			}
+		}else{
+			console.log('五分钟后可能开启另一个视频');
+			playManager();
+			clearInterval(detectMinutes);
+		}
+	},10000);
+}
+
+function playManager(){   //播放管理,自动播放并监控播放个数
+	setInterval(function(){
+		if(parseInt(localStorage.currentPlayCount)<parseInt(localStorage.maxPlayCount)){
+			window.open(getURL());
+		}
+	},parseInt(localStorage.maxInterval));
+}
+
+function getURL(){  //获得下一个播放视频的视频地址
+	var LessionList = JSON.parse(localStorage.LessionList);
+	var url = LessionList.shift();
+	localStorage.LessionList = JSON.stringify(LessionList);
+	return url;
+}
+
+window.unload = function(){
+	localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 }
 
 auto_play = setInterval('run()',15000);
