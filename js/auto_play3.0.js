@@ -114,10 +114,7 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 			count++;
 			if(count>=5){ //资源十秒钟未加载
 				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
-				var LessionList = JSON.parse(localStorage.LessionList);
-				var url = LessionList.shift();
-				localStorage.LessionList = JSON.stringify(LessionList);
-				window.location=url;
+				window.location=getURL();
 			}
 		}else{
 			playManager();
@@ -128,9 +125,16 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 function playManager(){   //播放管理,自动播放并监控播放个数
 	setInterval(function(){
 		if(parseInt(localStorage.currentPlayCount)<parseInt(localStorage.maxPlayCount)){
-			window.open(localStorage.LessionList.shift());
+			window.open(getURL());
 		}
 	},parseInt(localStorage.maxInterval));
+}
+
+function getURL(){  //获得下一个播放视频的视频地址
+	var LessionList = JSON.parse(localStorage.LessionList);
+	var url = LessionList.shift();
+	localStorage.LessionList = JSON.stringify(LessionList);
+	return url;
 }
 
 auto_play = setInterval('run()',15000);
