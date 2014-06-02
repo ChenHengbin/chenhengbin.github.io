@@ -60,7 +60,6 @@ function run(){
 			console.log('剩余视频个数为:'+LessionList.length);			
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
-				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 				window.location=url;	
 			},300000);	
 			clearInterval(auto_play);//停止轮询
