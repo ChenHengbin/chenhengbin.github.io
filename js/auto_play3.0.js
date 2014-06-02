@@ -60,6 +60,7 @@ function run(){
 			console.log('剩余视频个数为:'+LessionList.length);			
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
+				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 				window.location=url;	
 			},300000);	
 			clearInterval(auto_play);//停止轮询
@@ -108,7 +109,7 @@ function logout(){
 
 function detectResouce(){  //检测flv资源是否加载，若没有加载，minutes变量是不存在的
 	var count = 0;
-	setInterval(function(){
+	var detectMinutes = setInterval(function(){
 		if(typeof(minutes)=='undefined'){
 			count++;
 			console.log('资源五分钟未加载，则会自动切换下一个视频');
@@ -117,8 +118,9 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 				window.location=getURL();
 			}
 		}else{
+			console.log('五分钟后可能开启另一个视频');
 			playManager();
-			clearInterval(this);
+			clearInterval(detectMinutes);
 		}
 	},10000);
 }
