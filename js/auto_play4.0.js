@@ -47,12 +47,12 @@ function run(){
 		var LessionList = JSON.parse(localStorage.LessionList);
 		if(LessionList&&LessionList.length>0){
 			var url = LessionList.shift();
-			console.log('本视频已看完,3分钟后将播放的视频地址是:\n'+url);
+			console.log('本视频已看完,5分钟后将播放的视频地址是:\n'+url);
 			console.log('剩余视频个数为:'+LessionList.length);			
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
 					window.location=url;
-			},280000);	
+			},300000);	
 			clearInterval(auto_play);//停止轮询
 		}else{
 			alert('任务列表中已没有视频!');
