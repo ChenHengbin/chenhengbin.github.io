@@ -7,11 +7,11 @@ document.getElementById('Ans20').click();
 //一、4
 document.getElementById('Ans30').click();
 //一、5
-//document.getElementById('Ans41').click();
+document.getElementById('Ans42').click();
 //一、6
 document.getElementById('Ans52').click();
 //一、7
-document.getElementById('Ans62').click();
+document.getElementById('Ans60').click();
 //一、8
 document.getElementById('Ans72').click();
 //一、9
@@ -41,11 +41,11 @@ document.getElementById('Ans180').click();
 document.getElementById('Ans190').click();
 
 //三、1
-document.getElementById('Ans20').innerHTML=
+document.getElementsByName('Ans99')[0].innerHTML = 
 '1、小班角色游戏指导要点：\n'+
 '（1）小班幼儿的游戏内容主要是重复操作游戏材料，教师的指导重点便在于如何使用游戏材料。即教师根据幼儿的游戏特点和社会经验为幼儿提供种类少，但同一种数量较多的成型玩具，避免幼儿因相互模仿而争抢玩具，满足幼儿平行游戏的需要。\n'+
 '（2）教师以游戏者的身份介入游戏，引导幼儿，培养幼儿的规则意识。\n'+
-'（3）让幼儿逐渐学会在游戏中进行自我管理，通过游戏评价不断丰富游戏经验。\n'+
+'（3）让幼儿逐渐学会在游戏中进行自我管理，通过游戏评价不断丰富游戏经验。\n\n'+
 '2、中班角色游戏指导要点：\n'+
 '（1）重点在于引导幼儿解决游戏冲突。仔细观察并认真分析幼儿发生冲突的起因，以游戏者的身份介入游戏，指导游戏；\n'+
 '（2）结合幼儿的社会经验，为幼儿提供丰富且富有变化的游戏材料，鼓励幼儿不断丰富游戏主题；\n'+
