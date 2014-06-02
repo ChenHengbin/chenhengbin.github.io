@@ -8,6 +8,7 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 var detectCount = 0;  //轮询计时
 var detectPlayer = setInterval(function(){
 	if(thisPlayer){  //如果播放器存在
+		playManager();
 		clearInterval(detectPlayer);
 	}else{
 		detectCount ++ ;
@@ -26,6 +27,14 @@ var setTime = setInterval(function(){   //设置为15分钟
 		clearInterval(setTime);
 	}
 },1000);
+
+localStorage.maxInterval = 300000; //最大操作时间间隔
+localStorage.maxPlayCount = 3;     //最大播放次数
+if(!localStorage.currentPlayCount){
+	localStorage.currentPlayCount = 1;
+}else{
+	localStorage.currentPlayCount = 1+parseInt(localStorage.currentPlayCount);
+}
 
 console.log('任务列表中还剩下'+JSON.parse(localStorage.LessionList).length+'个课件');
 
@@ -51,7 +60,8 @@ function run(){
 			console.log('剩余视频个数为:'+LessionList.length);			
 			localStorage.LessionList = JSON.stringify(LessionList);
 			setTimeout(function(){
-					window.location=url;
+				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
+				window.location=url;	
 			},300000);	
 			clearInterval(auto_play);//停止轮询
 		}else{
@@ -95,6 +105,14 @@ function logout(){
         	alert('请重新登陆,插件才会正常工作!');
         }
     });
+}
+
+function playManager(){   //播放管理,自动播放并监控播放个数
+	setInterval(function(){
+		if(parseInt(localStorage.currentPlayCount)<parseInt(localStorage.maxPlayCount)){
+			window.open(localStorage.LessionList.shift());
+		}
+	},parseInt(localStorage.maxInterval));
 }
 
 auto_play = setInterval('run()',15000);
