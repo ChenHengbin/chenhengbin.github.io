@@ -109,7 +109,7 @@ function logout(){
 
 function detectResouce(){  //检测flv资源是否加载，若没有加载，minutes变量是不存在的
 	var count = 0;
-	setInterval(fucntion(){
+	setInterval(function(){
 		if(typeof(minutes)=='undefined'){
 			count++;
 			if(count>=5){ //资源十秒钟未加载
