@@ -112,14 +112,15 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 	setInterval(function(){
 		if(typeof(minutes)=='undefined'){
 			count++;
-			if(count>=5){ //资源十秒钟未加载
+			console.log('资源五分钟未加载，则会自动切换下一个视频');
+			if(count>=30){ //资源五分钟未加载
 				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 				window.location=getURL();
 			}
 		}else{
 			playManager();
 		}
-	},2000);
+	},10000);
 }
 
 function playManager(){   //播放管理,自动播放并监控播放个数
