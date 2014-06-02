@@ -1,4 +1,4 @@
-﻿//功能：自动播放、只选择15分钟
+﻿//功能：自动播放、智能选择1、5、10、15分钟
 var last_remains;  //上次还剩余的时间
 
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
@@ -18,11 +18,11 @@ var detectPlayer = setInterval(function(){
 	}
 },2000);
 
-var setTime = setInterval(function(){   //设置为15分钟
-	if(document.getElementById('ChangeTimer15')){
-		document.getElementById('ChangeTimer15').click();
-		console.log("已设置为:15分钟!");
-		last_remains = 900;
+var setTime = setInterval(function(){   //设置为10分钟
+	if(document.getElementById('ChangeTimer10')){
+		document.getElementById('ChangeTimer10').click();
+		console.log("已设置为:10分钟!");
+		last_remains = 600;
 		clearInterval(setTime);
 	}
 },1000);
@@ -70,8 +70,16 @@ function run(){
 		var minus = thisPlayer.getDuration() - (parseInt(document.getElementById("RecordTime").innerHTML)+nsTimer)*60;
 		document.getElementById('RecordBut').click();
 		document.getElementById('RecordBut').disabled = 'true';
-		document.getElementById('ChangeTimer15').click(); 	
-		last_remains = 900;
+		if(minus<=180){
+			document.getElementById('ChangeTimer1').click();	
+			last_remains = 60;
+		}else if(minus<=500){
+			document.getElementById('ChangeTimer5').click();
+			last_remains = 300;
+		}else{
+			document.getElementById('ChangeTimer10').click(); 	
+			last_remains = 600;
+		}
 	}
 }
 
