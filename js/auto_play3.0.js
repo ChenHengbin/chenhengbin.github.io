@@ -8,7 +8,7 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 var detectCount = 0;  //轮询计时
 var detectPlayer = setInterval(function(){
 	if(thisPlayer){  //如果播放器存在
-		playManager();
+		detectResouce();
 		clearInterval(detectPlayer);
 	}else{
 		detectCount ++ ;
@@ -105,6 +105,21 @@ function logout(){
         	alert('请重新登陆,插件才会正常工作!');
         }
     });
+}
+
+function detectResouce(){  //检测flv资源是否加载，若没有加载，minutes变量是不存在的
+	var count = 0;
+	setInterval(fucntion(){
+		if(typeof(minutes)=='undefined'){
+			count++;
+			if(count>=5){ //资源十秒钟未加载
+				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
+				window.location=localStorage.LessionList.shift();
+			}
+		}else{
+			playManager();
+		}
+	},2000);
 }
 
 function playManager(){   //播放管理,自动播放并监控播放个数
