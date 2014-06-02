@@ -119,6 +119,7 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 			}
 		}else{
 			playManager();
+			clearInterval(this);
 		}
 	},10000);
 }
@@ -136,6 +137,10 @@ function getURL(){  //获得下一个播放视频的视频地址
 	var url = LessionList.shift();
 	localStorage.LessionList = JSON.stringify(LessionList);
 	return url;
+}
+
+window.unload = function(){
+	localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
 }
 
 auto_play = setInterval('run()',15000);
