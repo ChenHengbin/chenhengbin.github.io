@@ -110,7 +110,7 @@ function logout(){
 function detectResouce(){  //检测flv资源是否加载，若没有加载，minutes变量是不存在的
 	var count = 0;
 	var detectMinutes = setInterval(function(){
-		if(typeof(minutes)=='undefined'){
+		if(typeof(minutes)=='undefined'&&document.getElementById("string").innerHTML!='此课件观看时长已满足！'){
 			count++;
 			console.log('资源五分钟未加载，则会自动切换下一个视频');
 			if(count>=30){ //资源五分钟未加载
