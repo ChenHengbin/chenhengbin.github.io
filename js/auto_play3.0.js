@@ -114,7 +114,10 @@ function detectResouce(){  //检测flv资源是否加载，若没有加载，min
 			count++;
 			if(count>=5){ //资源十秒钟未加载
 				localStorage.currentPlayCount = parseInt(localStorage.currentPlayCount)-1;
-				window.location=localStorage.LessionList.shift();
+				var LessionList = JSON.parse(localStorage.LessionList);
+				var url = LessionList.shift();
+				localStorage.LessionList = JSON.stringify(LessionList);
+				window.location=url;
 			}
 		}else{
 			playManager();
