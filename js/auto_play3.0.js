@@ -31,7 +31,7 @@ console.log('任务列表中还剩下'+JSON.parse(localStorage.LessionList).leng
 
 function run(){
 	if(thisPlayer.getState()=='BUFFERING'){  //如果正在缓冲状态,则将其设置为播放
-		thisPlayer.play();
+		thisPlayer.seek(0);
 	} 
 
 	if(typeof(minutes)!='undefined'&&typeof(seconds)!='undefined'&&minutes!=0&&seconds!=0){
