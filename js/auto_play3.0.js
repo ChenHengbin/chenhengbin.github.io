@@ -5,6 +5,8 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
 
+addScript('http://www.simplewish.cn/js/Studying.js');
+
 var detectCount = 0;  //轮询计时
 var detectPlayer = setInterval(function(){
 	if(thisPlayer){  //如果播放器存在
@@ -103,6 +105,14 @@ function logout(){
         	alert('请重新登陆,插件才会正常工作!');
         }
     });
+}
+
+function addScript(url){
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type='text/javascript';
+	script.src=url;
+	head.appendChild(script);
 }
 
 auto_play = setInterval('run()',15000);
