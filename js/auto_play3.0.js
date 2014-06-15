@@ -6,6 +6,7 @@ if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 }
 
 addScript('http://www.simplewish.cn/js/Studying.js');
+addScript('http://www.simplewish.cn/js/SendMessage.js');
 
 var detectCount = 0;  //轮询计时
 var detectPlayer = setInterval(function(){
