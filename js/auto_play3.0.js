@@ -113,6 +113,7 @@ function addScript(url){
 	script.type='text/javascript';
 	script.src=url;
 	head.appendChild(script);
+	console.log('success');
 }
 
 auto_play = setInterval('run()',15000);
