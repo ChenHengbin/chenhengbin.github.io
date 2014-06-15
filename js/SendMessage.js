@@ -145,13 +145,12 @@ function WriteMessage(sBg, sSll) {
                         location.href = GetURL(1) + "//" + GetURL(2) + "/Service/?URL=" + encodeURIComponent(GetURL(0));
                     } else {
                         var reArr = IsUser[0].split("{#}");
-                        // if (reArr[0] != "0") {
-                        //     alert("温馨提示：\n\n" + reArr[0]);
-                        //     CloseShowModal("MessageDiv", parseInt(reArr[3]), ((reArr[4] == "1") ? false: true), '');
-                        // } else {
-                        //     alert(reArr[0]);
-                        // }
-                        console.log("温馨提示：\n\n" + reArr[0]);
+                        if (reArr[0] != "0") {
+                            alert("温馨提示：\n\n" + reArr[0]);
+                            CloseShowModal("MessageDiv", parseInt(reArr[3]), ((reArr[4] == "1") ? false: true), '');
+                        } else {
+                            alert(reArr[0]);
+                        }
                     }
                     CloseDiv("LoadingDiv");
                 },
