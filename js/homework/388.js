@@ -50,35 +50,35 @@ document.getElementById('Ans233').click();
 document.getElementById('Ans242').click();
 
 //二、1
-document.getElementById('Ans25').innerHTML=
+document.getElementById('Ans25').value=
 '它是国家对培养人才的质量和规格的总体要求。';
 //二、2
-document.getElementById('Ans26').innerHTML=
+document.getElementById('Ans26').value=
 '指教师有目的、有计划地引导幼儿运用视觉、听觉、味觉、嗅觉等多种感官去感知所选定的客观事物与现象，使之获得感性经验，并在此基础上逐步形成概念的方法。';
 //二、3
-document.getElementById('Ans27').innerHTML=
+document.getElementById('Ans27').value=
 '指教学活动要能使每一个幼儿在原有基础上得到最大限度的发展。';
 //二、4
-document.getElementById('Ans28').innerHTML=
+document.getElementById('Ans28').value=
 '是幼儿通过扮演角色，运用想象，创造性地反映个人生活印象的一种游戏。其通常都有一定的主题如娃娃家、商店、医院等等，所以又称为主题角色游戏。';
 //二、5
-document.getElementById('Ans29').innerHTML=
+document.getElementById('Ans29').value=
 '指在评价对象的集合之外，确定一个标准，评价时将评价对象与这个客观标准进行比较。';
 
 //三、1
-document.getElementById('Ans30').innerHTML=
+document.getElementsByName('Ans278')[0].value=
 '（1）促进幼儿身体的发展\n'+
 '（2）促进幼儿智力和语言的发展\n'+
 '（3）促进幼儿良好情感的发展\n'+
 '（4）促进幼儿社会性的发展';
 //三、2
-document.getElementById('Ans31').innerHTML=
+document.getElementsByName('Ans294')[0].value=
 '（1）做好观察前的准备。包括：确定观察目的，选择观察对象，拟定观察计划，创设观察的环境条件。\n'+
 '（2）观察开始时，教师要向幼儿提出观察目的，先让幼儿自由观察，并鼓励他们提出疑问。\n'+
 '（3）观察过程中，启发幼儿从不同方面感知，并用语言描述观察对象。\n'+
 '（4）观察结束时，要总结。';
 //三、3
-document.getElementById('Ans32').innerHTML=
+document.getElementsByName('Ans295')[0].value=
 '（1）启蒙性\n'+
 '（2）生活化\n'+
 '（3）游戏性\n'+
@@ -86,7 +86,7 @@ document.getElementById('Ans32').innerHTML=
 '（5）潜在性';
 
 //三、4
-document.getElementById('Ans33').innerHTML=
+document.getElementsByName('Ans298')[0].value=
 '三个蒙台梭利的主要理论是：\n'+
 '(1)幼儿自我学习的法则。\n'+
 '(2) 重视感觉教育。\n'+
@@ -100,7 +100,7 @@ document.getElementById('Ans33').innerHTML=
 '3、蒙台梭利学前教育思想让我们重新审读幼儿教师的角色，作为幼儿教育工作者要从课堂上的主导地位转变成内心的辅导者, 教师要愉快的工作，要让儿童通过自由选择来达到有效教学的目的。教师应该以儿童为本，尊重儿童的人格，尊重他们的兴趣、爱好，创造宽松、自由的生活环境，尽量满足儿童的好动心、好奇心和游戏心。';
 
 //四、1
-document.getElementById('Ans34').innerHTML=
+document.getElementById('Ans34').value=
 '1、教师在让小班幼儿按颜色分类的活动中，提供了红、蓝、绿三种颜色的雪花片作为学具，但幼儿操作时，要么不能分辨蓝色、绿色，要么就是玩起了游戏，没有达到教师预期的效果\n'+
 '分析：\n'+
 '1、没有达到预期效果的原因：没有根据幼儿的年龄特点和认知发展规律来开展分类活。\n'+

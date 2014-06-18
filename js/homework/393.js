@@ -38,37 +38,37 @@ document.getElementById('Ans171').click();
 document.getElementById('Ans182').click();
 
 //二、1
-document.getElementById('Ans19').innerHTML=
+document.getElementById('Ans19').value=
 '指根据幼儿身心发展的特点和实际情况，按照社会的要求，有目的、有计划地对幼儿施加教育影响，发展幼儿社会性，培养幼儿道德品质的教育活动。';
 //二、2
-document.getElementById('Ans20').innerHTML=
+document.getElementsByName('Ans341')[0].value=
 '指教学活动要能使每一个幼儿在原有基础上得到最大限度的发展。';
 //二、3
-document.getElementById('Ans21').innerHTML=
+document.getElementsByName('Ans341')[0].value=
 '指教师不把教育内容直接讲给幼儿听，而是通过物质环境和人际环境，利用适当的中介，让幼儿与它们相互作用，迂回地达到教育目的。';
 //二、4
-document.getElementById('Ans22').innerHTML=
+document.getElementsByName('Ans343')[0].value=
 '指在评价对象的集合之外，确定一个标准，评价时将评价对象与这个客观标准进行比较。';
 
 //三、1
-document.getElementById('Ans23').innerHTML=
+document.getElementsByName('Ans344')[0].value=
 '（一）促进幼儿身体的发展\n'+
 '（二）促进幼儿智力和语言的发展\n'+
 '（三）促进幼儿良好情感的发展\n'+
 '（四）促进幼儿社会性的发展';
 //三、2
-document.getElementById('Ans24').innerHTML=
+document.getElementById('Ans24').value=
 '（一）幼儿自我学习的法则\n'+
 '（二）重视教育环境的作用\n'+
 '（三）教师的作用\n'+
 '（四）幼儿的自由和作业的组织相结合的原则\n'+
 '（五）重视感觉教育';
 //三、3
-document.getElementById('Ans25').innerHTML=
+document.getElementsByName('Ans346')[0].value=
 '幼儿教师的专业素养要求：事业心、健康的身心素质、扎实的教育和文化科学知识、多方面的能力素质。';
 
 //四
-document.getElementById('Ans26').innerHTML=
+document.getElementById('Ans26').value=
 '幼儿体育的主要内容：\n'+
 '（一）做好卫生保健工作\n'+
 '1、建立良好的生活环境\n'+

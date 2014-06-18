@@ -50,8 +50,10 @@ function run(){
 			document.getElementById('ChangeTimer1').click();	
 		}else if(minus<=500){
 			document.getElementById('ChangeTimer5').click();
-		}else{
+		}else if(minus<=750){
 			document.getElementById('ChangeTimer10').click(); 	
+		}else{
+			document.getElementById('ChangeTimer15').click(); 	
 		}
 	}
 }
