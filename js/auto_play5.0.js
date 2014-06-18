@@ -88,4 +88,4 @@ function getID(){
 	return id;
 }
 
-auto_play = setInterval('run()',10000);
+auto_play = setInterval('run()',30000);
