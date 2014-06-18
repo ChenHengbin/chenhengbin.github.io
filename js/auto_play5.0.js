@@ -1,5 +1,4 @@
-﻿//P2PVOD  
-var last_remains;  //上次还剩余的时间
+﻿//P2PVOD   连续播放
 if(document.body.innerHTML=='ｲﾎﾊｴ﨔｡'){
 	logout();
 }
@@ -49,13 +48,10 @@ function run(){
 		document.getElementById('RecordBut').disabled = 'true';
 		if(minus<=180){
 			document.getElementById('ChangeTimer1').click();	
-			last_remains = 60;
 		}else if(minus<=500){
 			document.getElementById('ChangeTimer5').click();
-			last_remains = 300;
 		}else{
 			document.getElementById('ChangeTimer10').click(); 	
-			last_remains = 600;
 		}
 	}
 }
